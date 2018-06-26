@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { FormBuilder, Validators } from '@angular/forms';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
     selector: 'app-login',
@@ -7,6 +9,18 @@ import { Router } from '@angular/router';
     styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-ngOnInit() {
-}
+    showAlert = false;
+
+    constructor(private fb: FormBuilder) {
+
+    }
+
+    loginform = this.fb.group({
+        username: ['', Validators.required],
+        password: ['', Validators.required]
+    });
+
+    ngOnInit() {
+
+    }
 }
