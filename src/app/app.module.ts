@@ -13,12 +13,16 @@ import { HeroFormComponent } from './formularios/hero-form/hero-form.component';
 import { HeroDetailComponent } from './formularios/hero-detail/hero-detail.component';
 import { HeroListComponent } from './formularios/hero-detail/hero-list/hero-list.component';
 import { HeroService } from './core/services/hero.service';
-import { BsModalService, ModalModule, AccordionModule, AlertModule, ButtonsModule, CarouselModule, CollapseModule } from 'ngx-bootstrap';
+import {
+  BsModalService, ModalModule, AccordionModule,
+  AlertModule, ButtonsModule, CarouselModule, CollapseModule, BsDatepickerModule
+} from 'ngx-bootstrap';
 import { AccordionExampleComponent } from './bootstrap/accordion-example/accordion-example.component';
 import { AlertsExampleComponent } from './bootstrap/alerts-example/alerts-example.component';
 import { ButtonsComponent } from './bootstrap/buttons/buttons.component';
 import { CarouselComponent } from './bootstrap/carousel/carousel.component';
 import { CollapseComponent } from './bootstrap/collapse/collapse.component';
+import { DatepickerComponent } from './bootstrap/datepicker/datepicker.component';
 
 
 
@@ -34,7 +38,8 @@ import { CollapseComponent } from './bootstrap/collapse/collapse.component';
     AlertsExampleComponent,
     ButtonsComponent,
     CarouselComponent,
-    CollapseComponent
+    CollapseComponent,
+    DatepickerComponent
   ],
   imports: [
     HttpClientModule,
@@ -48,7 +53,8 @@ import { CollapseComponent } from './bootstrap/collapse/collapse.component';
     ModalModule.forRoot(),
     ButtonsModule.forRoot(),
     CarouselModule.forRoot(),
-    CollapseModule.forRoot()
+    CollapseModule.forRoot(),
+    BsDatepickerModule.forRoot()
   ],
   entryComponents: [DialogoComponent],
   providers: [BsModalService],
