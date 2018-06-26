@@ -1,0 +1,32 @@
+<div class="content-wrapper">
+  <div class="content">
+    <label for="basic"> Ejemplo básico</label>
+    <button type="button" id="basic" class="btn btn-primary" (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed"
+      aria-controls="collapseBasic">
+        Toggle collapse
+      </button>
+    <hr>
+    <div id="collapseBasic" [collapse]="isCollapsed" class="card card-block card-header">
+      <div class="well well-lg">Some content</div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-3">
+        <label for="segundo">Segundo ejemplo</label>
+        <button type="button" id="segundo" class="btn btn-primary" (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed"
+          aria-controls="collapseBasic">Toggle collapse</button>
+      </div>
+      <div class="col-md-9">
+        <pre class="card card-block card-header">Event: {{message}}</pre>
+      </div>
+    </div>
+    <hr>
+    <div id="collapseEvent" class="card card-block card-header" (collapsed)="collapsed()" (expanded)="expanded()" [collapse]="isCollapsed">
+      <div class="well well-lg">Some content</div>
+    </div>
+
+
+
+
+  </div>
+</div>
