@@ -42,3 +42,10 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+src/assets/AdminLTE-3.0.0-alpha/.gitignore
+src/assets/AdminLTE-2.4.3/bower_components/Flot/FAQ.md
+src/assets/AdminLTE-2.4.3
+src/assets/AdminLTE-2.4.3/bower_components/Flot/.travis.yml
+src/assets/AdminLTE-2.4.3/LICENSE
+src/assets/AdminLTE-2.4.3/bower_components/Flot/.gitignore
+src/assets/AdminLTE-2.4.3/bower_components/Flot/.bower.json
