@@ -1,0 +1,52 @@
+<br>
+<div class="col-md-12">
+  <div class="col-md-4">
+    <p>
+      <button type="button" class="btn btn-primary btn-sm" (click)="isFirstDisabled = !isFirstDisabled">
+    Enable / Disable third panel
+  </button>
+    </p>
+  </div>
+  <div class="col-md-4">
+    <p>
+      <button type="button" class="btn btn-primary btn-sm" (click)="isFirstOpen = !isFirstOpen">
+        Expand open panels
+      </button>
+    </p>
+  </div>
+  <div class="col-md-4">
+    <label for="oneTime">One at a time</label>
+    <input type="checkbox" id="oneTime" class="btn btn-primary btn-sm" [(ngModel)]="oneAtATime">
+  </div>
+</div>
+<div class="col-md-12">
+  <accordion [closeOthers]="oneAtATime">
+    <accordion-group>
+      <div accordion-heading class="clearfix">
+        I can have markup!
+        <span class="badge badge-secondary float-right pull-right">Flipas loco</span>
+      </div>
+      This is just some content to illustrate fancy headings.
+    </accordion-group>
+    <accordion-group [panelClass]="customClass" heading="Yo logeo cosas... cosas nasis" (isOpenChange)="log($event)">
+      Some content
+    </accordion-group>
+    <accordion-group heading="Me quieren deshabilitar los cabrones" [isDisabled]="isFirstDisabled">
+      This content is straight in the template.
+    </accordion-group>
+    <accordion-group heading="Me expando solo, jeje" [isOpen]="isFirstOpen">
+      <p>Some content</p>
+    </accordion-group>
+    <accordion-group heading="Yo soy dinámico">
+      <p>The body of the accordion group grows to fit the contents</p>
+      <button type="button" class="btn btn-primary btn-sm" (click)="addItem()">Add Item
+    </button>
+      <div *ngFor="let item of items">{{item}}</div>
+    </accordion-group>
+    <accordion-group heading="Toma lista de penes" (isOpenChange)="resetPenes()" [isOpen]="isFirstOpen">
+      <p>Venga, dale para añadir penes</p>
+      <button type="button" class="btn btn-primary btn-sm" (click)="addPenes()">Añade penes</button>
+      <div *ngFor="let pene of penes">{{pene}}</div>
+    </accordion-group>
+  </accordion>
+</div>
