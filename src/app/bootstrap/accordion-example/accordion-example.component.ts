@@ -12,7 +12,7 @@ export class AccordionExampleComponent implements OnInit {
   oneAtAtime = true;
   customClass = 'customClass';
   items = ['Item 1', 'Item 2', 'Item 3'];
-  penes = ['8====D', '8====D', '8====D'];
+  objects = ['Object', 'Object 2', 'Object 3'];
 
   constructor() { }
 
@@ -23,12 +23,12 @@ export class AccordionExampleComponent implements OnInit {
     this.items.push(`Item ${this.items.length + 1}`);
   }
 
-  addPenes() {
-    this.penes.push(this.penes[0]);
+  addobjects() {
+    this.objects.push(this.objects[0]);
   }
 
-  resetPenes() {
-    this.penes = ['8====D', '8====D', '8====D'];
+  resetobjects() {
+    this.objects = ['Object', 'Object 2', 'Object 3'];
   }
 
   log(event: boolean) {

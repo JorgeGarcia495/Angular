@@ -43,10 +43,10 @@
     </button>
       <div *ngFor="let item of items">{{item}}</div>
     </accordion-group>
-    <accordion-group heading="Toma lista de penes" (isOpenChange)="resetPenes()" [isOpen]="isFirstOpen">
-      <p>Venga, dale para añadir penes</p>
-      <button type="button" class="btn btn-primary btn-sm" (click)="addPenes()">Añade penes</button>
-      <div *ngFor="let pene of penes">{{pene}}</div>
+    <accordion-group heading="Una lista" (isOpenChange)="resetObjects()" [isOpen]="isFirstOpen">
+      <p>Venga, dale para añadir</p>
+      <button type="button" class="btn btn-primary btn-sm" (click)="addObjects()">Añadir</button>
+      <div *ngFor="let object of objects">{{object}}</div>
     </accordion-group>
   </accordion>
 </div>
