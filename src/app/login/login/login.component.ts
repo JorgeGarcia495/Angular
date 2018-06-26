@@ -20,6 +20,9 @@ export class LoginComponent implements OnInit {
         password: ['', Validators.required]
     });
 
+    get username() { return this.loginform.get('username'); }
+    get password() { return this.loginform.get('password'); }
+
     ngOnInit() {
 
     }

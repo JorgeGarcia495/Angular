@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-login-reset',
@@ -7,7 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginResetComponent implements OnInit {
 
-  constructor() { }
+  constructor(private fb: FormBuilder) { }
+
+  resetform = this.fb.group({
+    email: ['', Validators.required]
+  });
 
   ngOnInit() {
   }

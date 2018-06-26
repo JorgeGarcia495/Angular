@@ -1,4 +1,25 @@
-<p>
-  login-reset works!
-</p>
-<button routerLink='/login/nuevaPassword'>Venga tira</button>
+<div class="row">
+  <div class="col-md-6 mx-auto mt-5">
+    <div class="card border-secondary">
+      <div class="card-header">
+        <h4>Recuperación de Contraseña</h4>
+      </div>
+      <div class="card-body">
+        <form [formGroup]="resetform" class="form-horizontal">
+          <div class="input-group">
+            <span class="input-group-addon"></span>
+            <input id="reset-email" class="form-control" type="text" name="email" formControlName="email" placeholder="Introduzca su email">
+          </div>
+          <div class="input-group mt-3">
+            <button class="btn btn-primary" type="submit">Recuperar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-6 mx-auto">
+    <div style="float: right; font-size:80%"><a routerLink="/login">Volver al login</a></div>
+  </div>
+</div>
