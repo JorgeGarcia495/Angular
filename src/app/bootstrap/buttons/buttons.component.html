@@ -1,0 +1,109 @@
+<div class="col-md-12">
+  <div class="form-group">
+    <div class="row">
+      <div class="col-md-6">
+        <label for="botonesReactive">Checkbox</label>
+        <pre class="card card-block card-header">{{checkModel | json}}</pre>
+      </div>
+      <div class="col-md-6">
+        <label for="botonesReactive">Single checkbox</label>
+        <pre class="card card-block card-header">{{singleModel | json}}</pre>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <div class="btn-group">
+          <label class="btn btn-primary" [(ngModel)]="checkModel.left" btnCheckbox tabindex="0" role="button">Left</label>
+          <label class="btn btn-primary" [(ngModel)]="checkModel.middle" btnCheckbox tabindex="0" role="button">Middle</label>
+          <label class="btn btn-primary" [(ngModel)]="checkModel.right" btnCheckbox tabindex="0" role="button">Right</label>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <button type="button" class="btn btn-primary" [(ngModel)]="singleModel" btnCheckbox btnCheckboxTrue="Julian" btnCheckboxFalse="Alfonso">Single Toggle</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Segunda parte -->
+  <div class="form-group">
+    <div class="row">
+      <div class="col-md-6">
+        <label for="botonesReactive">Botones con formulario reactivo</label>
+        <pre class="card card-block card-header">{{form.value | json}}</pre>
+      </div>
+      <div class="col-md-6">
+        <label for="radioModel">Botones de la radio</label>
+        <pre class="card card-block card-header">{{radioModel || 'null'}}</pre>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <form [formGroup]="form">
+          <div class="btn-group" id="botonesReactive">
+            <label class="btn btn-primary" [class.active]="form.value.left" btnCheckbox formControlName="left" tabindex="0" role="button">Left</label>
+            <label class="btn btn-primary" [class.active]="form.value.middle" btnCheckbox formControlName="middle" tabindex="0" role="button">Middle</label>
+            <label class="btn btn-primary" [class.active]="form.value.right" btnCheckbox formControlName="right" tabindex="0" role="button">Right</label>
+          </div>
+        </form>
+      </div>
+      <!-- Radio buttons -->
+      <div class="col-md-6">
+        <div class="btn-group" id="radioModel">
+          <label class="btn btn-primary" [(ngModel)]="radioModel" btnRadio tabindex="0" role="button">Left</label>
+          <label class="btn btn-primary" [(ngModel)]="radioModel" btnRadio tabindex="0" role="button">Middle</label>
+          <label class="btn btn-primary" [(ngModel)]="radioModel" btnRadio tabindex="0" role="button">Right</label>
+        </div>
+        <div class="btn-group" btnRadioGroup [(ngModel)]="radioModel">
+          <label class="btn btn-success" btnRadio="left" tabindex="0" role="button">Left</label>
+          <label class="btn btn-success" btnRadio="middle" tabindex="0" role="button">Middle</label>
+          <label class="btn btn-success" btnRadio="right" tabindex="0" role="button">Right</label>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Segunda parte -->
+  <div class="form-group">
+    <div class="row">
+      <div class="col-md-4">
+        <label for="uncheckable">Uncheckable buttons</label>
+        <pre class="card card-block card-header">{{uncheckable || 'null'}}</pre>
+      </div>
+      <div class="col-md-4">
+        <label for="uncheckable">Radio with reactive forms</label>
+        <pre class="card card-block card-header">{{radioForm.value | json}}</pre>
+      </div>
+      <div class="col-md-4">
+        <label for="disabled">Radio with reactive forms</label>
+        <pre class="card card-block card-header">{{disabled | json}}</pre>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="btn-group" id="uncheckable" btnRadioGroup [(ngModel)]="uncheckable">
+          <label class="btn btn-info" btnRadio="Left" uncheckable tabindex="0" role="button">Left</label>
+          <label class="btn btn-info" btnRadio="Middle" uncheckable tabindex="0" role="button">Middle</label>
+          <label class="btn btn-info" btnRadio="Right" uncheckable tabindex="0" role="button">Right</label>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <form [formGroup]="radioForm" class="form-inline">
+          <div class="btn-group" id="radioForm" btnRadioGroup formControlName="radio">
+            <label class="btn btn-primary" btnRadio="A" tabindex="0" role="button">A</label>
+            <label class="btn btn-primary" btnRadio="B" tabindex="0" role="button">B</label>
+            <label class="btn btn-primary" btnRadio="C" tabindex="0" role="button">C</label>
+          </div>
+        </form>
+      </div>
+      <div class="col-md-4">
+        <div class="btn-group" id="disabled">
+          <button class="btn btn-primary" [disabled]="disabled">Button</button>
+          <button *ngIf="disabled" class="btn btn-warning" (click)="disabled = !disabled">Habilitar</button>
+          <button *ngIf="!disabled" class="btn btn-warning" (click)="disabled = !disabled">Deshabilitar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
