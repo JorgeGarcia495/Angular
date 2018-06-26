@@ -1,0 +1,23 @@
+<div *ngFor="let alert of alerts">
+  <alert [type]="alert.type" [dismissible]="dismissible" (onClosed)="onClosed(alert)">{{alert.msg}}</alert>
+</div>
+<button type="button" class="btn btn-lg btn-primary" (click)="dismissible =  !dismissible">Toggle</button>
+<button type="button" class="btn btn-lg btn-primary" (click)="reset()">Reset</button>
+<button type="button" class="btn btn-lg btn-primary" (click)="showInput = true">Nueva Alerta</button>
+<div *ngIf="showInput" class="form-group">
+  <form #alertForm="ngForm" (ngSubmit)="crearAlerta()">
+    <div class="col-md-6">
+      <label for="newAlert">Tipo de alerta</label>
+      <input class="form-control" type="text" [(ngModel)]="type" id="newAlert" name="newAlert" required>
+    </div>
+    <div class="col-md-6">
+      <label for="newMsg">Mensaje</label>
+      <input class="form-control" type="text" [(ngModel)]="msg" id="newMsg" name="newAlert" required>
+    </div>
+    <div class="col-md-12">
+      <button type="submit" class="btn btn-success" [disabled]="!alertForm.form.valid">Crear alerta</button>
+      <button type="button" class="btn btn-default" (click)="alertForm.form.reset()">Limpiar campos</button>
+    </div>
+
+  </form>
+</div>
