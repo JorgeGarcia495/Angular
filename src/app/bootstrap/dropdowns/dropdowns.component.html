@@ -1,0 +1,156 @@
+<div class="col-md-12">
+  <div class="form-group">
+    <div class="row mt-4">
+      <div class="col-xs-12 col-12 col-md-3">
+        <h5>Basic Dropdown</h5>
+        <div class="btn-group" dropdown>
+          <button id="button-basic" dropdownToggle type="button" class="btn btn-primary dropdown-toggle" aria-controls="dropdown-basic">
+        Button Dropdown <span class="caret"></span>
+      </button>
+          <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu" role="menu" aria-labelledby="button-basic">
+            <li role="menuitem"><a class="dropdown-item">Action</a></li>
+            <li role="menuitem"><a class="dropdown-item">Another action</a></li>
+            <li role="menuitem"><a class="dropdown-item">Something else here</a></li>
+            <li class="divider dropdown-divider"></li>
+            <li role="menuitem"><a class="dropdown-item">Separated link</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- Segundo parte: Trigger by A -->
+      <div class="col-md-3">
+        <h5>a Trigger</h5>
+        <span dropdown (onShown)="onShown()" (onHidden)="onHidden()" (isOpenChange)="isOpenChange()">
+          <a href id="basic-link" dropdownToggle (click)="false" aria-controls="basic-link-dropdown">Dropdown link</a>
+          <ul id="basic-link-dropdown" *dropdownMenu class="dropdown-menu" role="menu" aria-labelledby="basic-link">
+            <li *ngFor="let choice of items">
+              <a class="dropdown-item" href="#">{{choice}}</a>
+            </li>
+          </ul>
+        </span>
+      </div>
+      <!-- Tercera parte: Split Button -->
+      <div class="col-md-3">
+        <h5>Split Button</h5>
+        <div class="btn-group" dropdown>
+          <button class="btn btn-danger">Split Button</button>
+          <button id="button-split" type="button" dropdownToggle class="btn btn-danger dropdown-toggle dropdown-toggle-split" aria-controls="dropdown-split">
+        <span class="caret"></span>
+        <span class="sr-only"></span>
+      </button>
+          <ul id="dropdown-split" *dropdownMenu class="dropdown-menu" role="menu" aria-labelledby="button-split">
+            <li role="menuitem"><a href="#" class="dropdown-item">Primera</a></li>
+            <li role="menuitem"><a href="#" class="dropdown-item">Segunda</a></li>
+            <li role="menuitem"><a href="#" class="dropdown-item">Tercera</a></li>
+            <li class="divider dropdown-divider"></li>
+            <li role="menuitem"><a href="#" class="dropdown-item">Cuarta</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Segunda línea -->
+  <div class="form-group">
+    <div class="row">
+      <!-- Controlamos el menú -->
+      <div class="col-xs-12 col-12 col-md-6">
+        <h5>Controladores</h5>
+        <div class="btn-group" dropdown #dropdown="bs-dropdown" [autoClose]="false">
+          <button dropdownToggle type="button" class="btn btn-primary dropdown-toggle" aria-controls="menu">Button Dropdown <span class="caret"></span></button>
+          <ul id="menu" role="menu" *dropdownMenu class="dropdown-menu">
+            <li role="menuitem"><a href="#" class="dropdown-item">Primera</a></li>
+            <li role="menuitem"><a href="#" class="dropdown-item">Segunda</a></li>
+            <li role="menuitem"><a href="#" class="dropdown-item">Tercera</a></li>
+            <li class="divider dropdown-divider"></li>
+            <li role="menuitem"><a href="#" class="dropdown-item">Cuarta</a></li>
+          </ul>
+        </div>
+        <button type="button" class="btn btn-primary" (click)="dropdown.toggle(true)">Toggle</button>
+        <button type="button" class="btn btn-primary" (click)="dropdown.show()">Show</button>
+        <button type="button" class="btn btn-primary" (click)="dropdown.hide()">Hide</button>
+      </div>
+      <!-- Trigerring by isOpen -->
+      <div class="col-xs-12 col-12 col-md-6">
+        <h5>IsOpen controller</h5>
+        <div class="btn-group" dropdown #dropdown="bs-dropdown" [autoClose]="false">
+          <button dropdownToggle type="button" class="btn btn-primary dropdown-toggle" aria-controls="menu">Button Dropdown <span class="caret"></span></button>
+          <ul id="menu" role="menu" *dropdownMenu class="dropdown-menu">
+            <li role="menuitem"><a href="#" class="dropdown-item">Primera</a></li>
+            <li role="menuitem"><a href="#" class="dropdown-item">Segunda</a></li>
+            <li role="menuitem"><a href="#" class="dropdown-item">Tercera</a></li>
+            <li class="divider dropdown-divider"></li>
+            <li role="menuitem"><a href="#" class="dropdown-item">Cuarta</a></li>
+          </ul>
+        </div>
+        <button type="button" class="btn btn-primary" (click)="dropdown.isOpen = !dropdown.isOpen">Toggle</button>
+      </div>
+    </div>
+  </div>
+  <!-- Tercera -->
+  <div class="form-group">
+    <div class="row">
+      <div class="col-xs-12 col-12 col-md-6">
+        <h5>Disabled Menu</h5>
+        <div class="btn-group" dropdown [isDisabled]="disabled">
+          <button id="button-disabled-menu" dropdownToggle type="button" class="btn btn-primary dropdown-toggle" aria-controls="dropdown-disabled-menu">
+              Button dropdown <span class="caret"></span>
+            </button>
+          <ul id="dropdown-disable-menu" role="menu" *dropdownMenu class="dropdown-menu" aria-labelledby="button-disabled-menu">
+            <li role="menuitem"><a href="#" class="dropdown-item">Primera</a></li>
+            <li role="menuitem"><a href="#" class="dropdown-item">Segunda</a></li>
+            <li role="menuitem"><a href="#" class="dropdown-item">Tercera</a></li>
+            <li class="divider dropdown-divider"></li>
+            <li role="menuitem"><a href="#" class="dropdown-item">Cuarta</a></li>
+          </ul>
+        </div>
+        <button type="button" class="btn btn-warning" (click)="disabled = !disabled">Enable/Disabled</button>
+      </div>
+      <div class="col-xs-12 col-12 col-md-6">
+        <h5>Disabled Option</h5>
+        <div class="btn-group" dropdown>
+          <button id="button-disabled-item" dropdownToggle type="button" class="btn btn-primary dropdown-toggle" aria-controls="dropdown-disabled-item">
+            Button dropdown <span class="caret"></span>
+          </button>
+          <ul id="dropdown-disabled-item" *dropdownMenu class="dropdown-menu" role="menu" aria-labelledby="button-disabled-item">
+            <li class="disabled" role="menuitem"><a class="dropdown-item disabled" href="#">Action</a></li>
+            <li role="menuitem"><a class="dropdown-item" href="#">Another action</a>
+            </li>
+            <li role="menuitem"><a class="dropdown-item" href="#">Something elsehere</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="row">
+      <div class="col-xs-12 col-12 col-md-6">
+        <h5>Right Align</h5>
+        <div class="btn-group" dropdown>
+          <button id="button-disabled-item" dropdownToggle type="button" class="btn btn-primary dropdown-toggle" aria-controls="dropdown-disabled-item">
+            Button dropdown needs to be larger <span class="caret"></span>
+          </button>
+          <ul id="dropdown-disabled-item" *dropdownMenu class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="button-disabled-item">
+            <li class="disabled" role="menuitem"><a class="dropdown-item" href="#">Action</a></li>
+            <li role="menuitem"><a class="dropdown-item" href="#">Another action</a>
+            </li>
+            <li role="menuitem"><a class="dropdown-item" href="#">Something elsehere</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-xs-12 col-12 col-md-6">
+        <h5>Right Align</h5>
+        <div class="btn-group" dropdown dropup="true">
+          <button id="button-disabled-item" dropdownToggle type="button" class="btn btn-primary dropdown-toggle" aria-controls="dropdown-disabled-item">
+                  Button dropup<span class="caret"></span>
+                </button>
+          <ul id="dropdown-disabled-item" *dropdownMenu class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="button-disabled-item">
+            <li class="disabled" role="menuitem"><a class="dropdown-item" href="#">Action</a></li>
+            <li role="menuitem"><a class="dropdown-item" href="#">Another action</a>
+            </li>
+            <li role="menuitem"><a class="dropdown-item" href="#">Something elsehere</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
