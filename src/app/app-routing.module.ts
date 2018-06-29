@@ -14,6 +14,7 @@ import { CarouselComponent } from 'ngx-bootstrap';
 import { CollapseComponent } from './bootstrap/collapse/collapse.component';
 import { DatepickerComponent } from './bootstrap/datepicker/datepicker.component';
 import { DropdownsComponent } from './bootstrap/dropdowns/dropdowns.component';
+import { ModalsComponent } from './bootstrap/modals/modals.component';
 
 const routes: Routes = [
     { path: 'login', loadChildren: './login/login.module#LoginModule' },
@@ -28,6 +29,7 @@ const routes: Routes = [
     { path: 'collapse', component: CollapseComponent },
     { path: 'datepicker', component: DatepickerComponent },
     { path: 'dropdown', component: DropdownsComponent },
+    { path: 'modal', component: ModalsComponent },
     { path: '', children: [], canActivate: [AuthGuardService] }
 ];
 

@@ -1,0 +1,120 @@
+<div class="col-md-12">
+  <div class="card card-block card-header">
+    <div class="form-group">
+      <div class="row">
+        <div class="col-xs-12 col-12 col-md-3">
+          <h5>Basic modal</h5>
+          <button type="button" class="btn btn-primary btn-block" (click)="openModal(template)">Template</button>
+        </div>
+        <div class="col-xs-12 col-12 col-md-6">
+          <h5>Modal Events</h5>
+          <button type="button" class="btn btn-info btn-block" (click)="openModal3(template3)">Events</button>
+          <pre class="card card-block card-header" *ngFor="let message of messages">{{message}}</pre>
+        </div>
+        <div class="col-xs-12 col-12 col-md-3">
+          <h5>Static Modal</h5>
+          <button type="button" class="btn btn-primary btn-block" (click)="staticModal.show()" aria-controls="staticModal">Static modal</button>
+          <div class="modal fade" bsModal #staticModal="bs-modal" [config]="{backdrop: 'static'}" tabindex="-1" role="dialog" aria-labelledby="dialog-static-name">
+            <div class="modal-dialog modal-sm">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h4 id="dialog-static-name" class="modal-title pull-left">Static modal</h4>
+                  <button type="button" class="close pull-right" aria-label="Close" (click)="staticModal.hide()">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+                <div class="modal-body">
+                  This is static modal, backdrop click will not close it. Click <b>&times;</b> to close modal.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12 col-12 col-md-3">
+        <h5>Modal Test</h5>
+        <button id="modal-test-button" type="button" class="btn btn-warning btn-block" (click)="modalTest.show()" aria-controls="modalTest">Modal Test</button>
+        <div bsModal #modalTest="bs-modal" class="modal fade" [config]="{backdrop: 'false', ignoreBackdropClick: 'true', animated: 'false'}">
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h4 id="modal-title" class="modal-title pull-left">Modal Test</h4>
+                <button type="button" class="close pull-right" (click)="modalTest.hide()" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              </div>
+              <div class="modal-body">
+                <p>Este es el body</p>
+              </div>
+              <div class="modal-footer">
+                <button id="close-modal" type="button" class="btn btn-info" aria-label="Close">Close <span>&times;</span></button>
+                <span>Probando los footer</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Quinto modal, con eventos, invocado desde el componente -->
+      <div class="col-xs-12 col-12 col-md-6">
+        <h5>Events from parent Component</h5>
+        <button type="button" class="btn btn-primary btn-block" (click)="showModal()">Test Events</button>
+        <br><br>
+        <pre class="card card-block card-header" *ngFor="let message5 of messages5">{{message5}}</pre>
+
+        <div class="modal fade" bsModal #modal5="bs-modal" tabindex="-1" role="dialog" aria-labelledby="dialog-events-name" (onShow)="handler('onShow', $event)"
+          (onShown)="handler('onShown', $event)" (onHide)="handler('onHide', $event)" (onHidden)="handler('onHidden', $event)">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h4 id="dialog-events-name" class="modal-title pull-left">Modal</h4>
+                <button type="button" class="close pull-right" aria-label="Close" (click)="modal.hide()">
+                <span aria-hidden="true">&times;</span>
+              </button>
+              </div>
+              <div class="modal-body">
+                Just another modal <br> Click <b>&times;</b>, press <code>Esc</code> or click on backdrop to close modal.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #template>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">Título</h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modal.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <h5>This is a basic modal</h5>
+    <button type="button" class="btn btn-warning" (click)="openModal2(template2)" aria-haspopup="true" aria-controls="template2">Otro modal</button>
+  </div>
+</ng-template>
+
+<ng-template #template2>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">Segundo Modal</h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modal2.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <p>This is a basic modal</p>
+  </div>
+</ng-template>
+
+<ng-template #template3>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">Tercer Modal</h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modal3.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    This is a basic modal
+  </div>
+</ng-template>

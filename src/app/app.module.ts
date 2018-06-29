@@ -24,6 +24,7 @@ import { CarouselComponent } from './bootstrap/carousel/carousel.component';
 import { CollapseComponent } from './bootstrap/collapse/collapse.component';
 import { DatepickerComponent } from './bootstrap/datepicker/datepicker.component';
 import { DropdownsComponent } from './bootstrap/dropdowns/dropdowns.component';
+import { ModalsComponent } from './bootstrap/modals/modals.component';
 
 
 
@@ -41,7 +42,8 @@ import { DropdownsComponent } from './bootstrap/dropdowns/dropdowns.component';
     CarouselComponent,
     CollapseComponent,
     DatepickerComponent,
-    DropdownsComponent
+    DropdownsComponent,
+    ModalsComponent
   ],
   imports: [
     HttpClientModule,
