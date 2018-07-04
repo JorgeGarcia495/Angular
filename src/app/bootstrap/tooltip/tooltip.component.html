@@ -1,0 +1,57 @@
+<div class="col-xs-12 col-12 col-md-12">
+  <div class="card card-block card-header">
+    <div class="form-group">
+      <div class="row">
+        <div class="col-xs-12 col-12 col-md-4">
+          <h5>Basic Tooltip</h5>
+          <button type="button" class="btn  btn-primary btn-block" tooltip="Este es mi primer tooltip!">Simple demo</button>
+        </div>
+        <div class="col-xs-12 col-12 col-md-4">
+          <h5>Placement</h5>
+          <button type="button" class="btn  btn-primary" tooltip="Este es mi segundo tooltip!" placement="top">We</button>
+          <button type="button" class="btn  btn-primary" tooltip="Este es mi segundo tooltip!" placement="right">Can</button>
+          <button type="button" class="btn  btn-primary" tooltip="Este es mi segundo tooltip!" placement="bottom">Choose</button>
+          <button type="button" class="btn  btn-primary" tooltip="Este es mi segundo tooltip!" placement="left">Placement</button>
+        </div>
+        <div class="col-xs-12 col-12 col-md-4">
+          <h5>Triggers</h5>
+          <button type="button" class="btn  btn-primary btn-block" tooltip="Este es mi tercer tooltip!" triggers="focus">Focus on me!</button>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="row">
+        <div class="col-xs-12 col-12 col-md-4">
+          <h5>Dynamic Content</h5>
+          <button type="button" class="btn  btn-primary btn-block" [tooltip]="content">Binding</button>
+        </div>
+        <div class="col-xs-12 col-12 col-md-4">
+          <h5>Content template</h5>
+          <ng-template #tolTemplate>Just another: {{content}}</ng-template>
+          <button type="button" class="btn btn-warning btn-block" [tooltip]="tolTemplate">Template</button>
+        </div>
+        <div class="col-xs-12 col-12 col-md-4">
+          <h5>Hover</h5>
+          <button type="button" class="btn btn-primary btn-block" tooltip="Haz click para eliminarme" triggers="mouseenter:click">Aqui me quedo</button>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="row">
+        <div class="col-xs-12 col-12 col-md-4">
+          <h5>Click</h5>
+          <button type="button" class="btn btn-primary btn-block" tooltip="Vuelve a hacer click para quitarme" triggers="click">Haz click</button>
+        </div>
+        <div class="col-xs-12 col-12 col-md-4">
+          <h5>Toggle</h5>
+          <label tooltip="Aparezco donde quiero" triggers="" #pop=bs-tooltip>Tengo un tooltip!!</label>
+          <button type="button" class="btn btn-primary" (click)="pop.toggle()">Haz click</button>
+        </div>
+        <div class="col-xs-12 col-12 col-md-4">
+          <h5>I'm retarded</h5>
+          <button type="button" class="btn btn-primary" tooltip="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." [delay]="500">Tooltip with 0.5sec delay</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
