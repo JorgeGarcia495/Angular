@@ -14,8 +14,8 @@ import { HeroDetailComponent } from './formularios/hero-detail/hero-detail.compo
 import { HeroListComponent } from './formularios/hero-detail/hero-list/hero-list.component';
 import { HeroService } from './core/services/hero.service';
 import {
-  BsModalService, ModalModule, AccordionModule,
-  AlertModule, ButtonsModule, CarouselModule, CollapseModule, BsDatepickerModule, BsDropdownModule
+  BsModalService, ModalModule, AccordionModule, AlertModule, ButtonsModule, CarouselModule, CollapseModule,
+  BsDatepickerModule, BsDropdownModule, PaginationModule, TimepickerModule, TooltipModule
 } from 'ngx-bootstrap';
 import { AccordionExampleComponent } from './bootstrap/accordion-example/accordion-example.component';
 import { AlertsExampleComponent } from './bootstrap/alerts-example/alerts-example.component';
@@ -25,6 +25,9 @@ import { CollapseComponent } from './bootstrap/collapse/collapse.component';
 import { DatepickerComponent } from './bootstrap/datepicker/datepicker.component';
 import { DropdownsComponent } from './bootstrap/dropdowns/dropdowns.component';
 import { ModalsComponent } from './bootstrap/modals/modals.component';
+import { PaginationComponent } from './bootstrap/pagination/pagination.component';
+import { TimepickerComponent } from './bootstrap/timepicker/timepicker.component';
+import { TooltipComponent } from './bootstrap/tooltip/tooltip.component';
 
 
 
@@ -43,7 +46,10 @@ import { ModalsComponent } from './bootstrap/modals/modals.component';
     CollapseComponent,
     DatepickerComponent,
     DropdownsComponent,
-    ModalsComponent
+    ModalsComponent,
+    PaginationComponent,
+    TimepickerComponent,
+    TooltipComponent
   ],
   imports: [
     HttpClientModule,
@@ -59,7 +65,10 @@ import { ModalsComponent } from './bootstrap/modals/modals.component';
     CarouselModule.forRoot(),
     CollapseModule.forRoot(),
     BsDatepickerModule.forRoot(),
-    BsDropdownModule.forRoot()
+    BsDropdownModule.forRoot(),
+    PaginationModule.forRoot(),
+    TimepickerModule.forRoot(),
+    TooltipModule.forRoot()
   ],
   entryComponents: [DialogoComponent],
   providers: [BsModalService],
