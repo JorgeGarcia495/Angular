@@ -1,0 +1,38 @@
+<div class="col-xs-12 col-12 col-md-12 mt-5">
+  <div class="card card-block card-header">
+    <div class="form-group">
+      <div class="row">
+        <div class="col-xs-12 col-12 col-md-4">
+          <h5>Basic Popover</h5>
+          <button type="button" class="btn btn-primary btn-block" popover="Pues es facil esto">Púlsame</button>
+        </div>
+        <div class="col-xs-12 col-12 col-md-4">
+          <h5>Con título</h5>
+          <button type="button" class="btn btn-primary" popoverTitle="Título" popover="Body" placement="left">Left</button>
+          <button type="button" class="btn btn-primary" popoverTitle="Título" popover="Body" placement="top">Top</button>
+          <button type="button" class="btn btn-primary" popoverTitle="Título" popover="Body" placement="bottom">Bottom</button>
+          <button type="button" class="btn btn-primary" popoverTitle="Título" popover="Body" placement="right">Right</button>
+        </div>
+        <div class="col-xs-12 col-12 col-md-4">
+          <h5>Focus</h5>
+          <button type="button" class="btn btn-primary btn-block" popoverTitle="Focus on click" popover="Igual que los tooltips..."
+            triggers="focus">Auto focus</button>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="row">
+        <div class="col-xs-12 col-12 col-md-4">
+          <h5>Simple binding</h5>
+          <button type="button" class="btn btn-primary btn-block" [popover]="content" [popoverTitle]="title" [outsideClick]="true">Todo dinámico</button>
+        </div>
+        <div class="col-xs-12 col-12 col-md-4">
+          <h5>Events</h5>
+          <button type="button" class="btn btn-primary btn-block" (onShown)="onShown()" (onHidden)="onHidden()" popover="Lo que sea"
+            popoverTitle="Título">Verás tu....</button>
+          <input type="text" class="form-control mt-2" [disabled]="true" value="Message value: {{message}}">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
