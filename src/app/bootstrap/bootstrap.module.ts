@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {
   AccordionModule, AlertModule, ModalModule, ButtonsModule, CarouselModule, CollapseModule, BsDatepickerModule,
-  BsDropdownModule, PaginationModule, PopoverModule, TooltipModule, TimepickerModule, BsModalService
+  BsDropdownModule, PaginationModule, PopoverModule, TooltipModule, TimepickerModule, BsModalService, ProgressbarModule
 } from 'ngx-bootstrap';
 import { DialogoComponent } from './dialogo/dialogo.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -26,6 +26,7 @@ import { HeroFormComponent } from '../formularios/hero-form/hero-form.component'
 import { routing } from './bootstrap-routing.module';
 import { CarouselComponent } from './carousel/carousel.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { ProgressbarComponent } from './progressbar/progressbar.component';
 
 @NgModule({
   imports: [
@@ -43,6 +44,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
     BsDropdownModule.forRoot(),
     PaginationModule.forRoot(),
     PopoverModule.forRoot(),
+    ProgressbarModule.forRoot(),
     TimepickerModule.forRoot(),
     TooltipModule.forRoot()
   ],
@@ -60,7 +62,8 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
     PaginationComponent,
     TimepickerComponent,
     TooltipComponent,
-    PopoverComponent],
+    PopoverComponent,
+    ProgressbarComponent],
   providers: [BsModalService]
 })
 export class BootstrapModule { }

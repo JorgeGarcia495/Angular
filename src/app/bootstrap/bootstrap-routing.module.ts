@@ -12,6 +12,7 @@ import { ButtonsComponent } from './buttons/buttons.component';
 import { AlertsExampleComponent } from './alerts-example/alerts-example.component';
 import { AccordionExampleComponent } from './accordion-example/accordion-example.component';
 import { DireccionComponent } from './direccion/direccion.component';
+import { ProgressbarComponent } from './progressbar/progressbar.component';
 
 const routes: Routes = [
     { path: 'direccion', component: DireccionComponent },
@@ -25,6 +26,7 @@ const routes: Routes = [
     { path: 'modal', component: ModalsComponent },
     { path: 'pagination', component: PaginationComponent },
     { path: 'popover', component: PopoverComponent },
+    { path: 'progressbar', component: ProgressbarComponent },
     { path: 'time', component: TimepickerComponent },
     { path: 'tooltip', component: TooltipComponent },
     { path: '', component: AlertsExampleComponent }
