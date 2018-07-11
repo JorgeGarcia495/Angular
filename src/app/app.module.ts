@@ -15,7 +15,7 @@ import { HeroListComponent } from './formularios/hero-detail/hero-list/hero-list
 import { HeroService } from './core/services/hero.service';
 import {
   BsModalService, ModalModule, AccordionModule, AlertModule, ButtonsModule, CarouselModule, CollapseModule,
-  BsDatepickerModule, BsDropdownModule, PaginationModule, TimepickerModule, TooltipModule
+  BsDatepickerModule, BsDropdownModule, PaginationModule, TimepickerModule, TooltipModule, PopoverModule
 } from 'ngx-bootstrap';
 import { AccordionExampleComponent } from './bootstrap/accordion-example/accordion-example.component';
 import { AlertsExampleComponent } from './bootstrap/alerts-example/alerts-example.component';
@@ -28,6 +28,7 @@ import { ModalsComponent } from './bootstrap/modals/modals.component';
 import { PaginationComponent } from './bootstrap/pagination/pagination.component';
 import { TimepickerComponent } from './bootstrap/timepicker/timepicker.component';
 import { TooltipComponent } from './bootstrap/tooltip/tooltip.component';
+import { PopoverComponent } from './bootstrap/popover/popover.component';
 
 
 
@@ -49,7 +50,8 @@ import { TooltipComponent } from './bootstrap/tooltip/tooltip.component';
     ModalsComponent,
     PaginationComponent,
     TimepickerComponent,
-    TooltipComponent
+    TooltipComponent,
+    PopoverComponent
   ],
   imports: [
     HttpClientModule,
@@ -67,6 +69,7 @@ import { TooltipComponent } from './bootstrap/tooltip/tooltip.component';
     BsDatepickerModule.forRoot(),
     BsDropdownModule.forRoot(),
     PaginationModule.forRoot(),
+    PopoverModule.forRoot(),
     TimepickerModule.forRoot(),
     TooltipModule.forRoot()
   ],

@@ -18,6 +18,7 @@ import { ModalsComponent } from './bootstrap/modals/modals.component';
 import { PaginationComponent } from './bootstrap/pagination/pagination.component';
 import { TimepickerComponent } from './bootstrap/timepicker/timepicker.component';
 import { TooltipComponent } from './bootstrap/tooltip/tooltip.component';
+import { PopoverComponent } from './bootstrap/popover/popover.component';
 
 const routes: Routes = [
     { path: 'login', loadChildren: './login/login.module#LoginModule' },
@@ -34,6 +35,7 @@ const routes: Routes = [
     { path: 'dropdown', component: DropdownsComponent },
     { path: 'modal', component: ModalsComponent },
     { path: 'pagination', component: PaginationComponent },
+    { path: 'popover', component: PopoverComponent },
     { path: 'time', component: TimepickerComponent },
     { path: 'tooltip', component: TooltipComponent },
     { path: '', children: [], canActivate: [AuthGuardService] }
