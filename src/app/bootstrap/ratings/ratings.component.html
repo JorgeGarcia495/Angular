@@ -1,0 +1,53 @@
+<div class="col-xs-12 col-12 col-md-12">
+  <div class="card card-header card-block">
+    <div class="form-group">
+      <div class="row">
+        <div class="col-xs-12 col-12 col-md-4">
+          <rating [(ngModel)]="value" [max]="max"></rating>
+          <pre class="card card-header card-block">The actual rating is: {{value}}</pre>
+        </div>
+        <div class="col-xs-12 col-12 col-md-4">
+          <rating [(ngModel)]="value" [max]="max" readonly="true"></rating>
+          <pre class="card card-header card-block">Informative rating, no interaction</pre>
+        </div>
+        <div class="col-xs-12 col-12 col-md-4">
+          <!-- Vacío -->
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="row">
+        <div class="col-xs-12 col-12 col-md-6">
+          <rating [(ngModel)]="rate" [max]="max2" [readonly]="isReadonly" (onHover)="hoveringOver($event)" (onLeave)="resetStar()"
+            [titles]="['one','two','three']"></rating>
+          <span [ngClass]="{'label-warning': percent<30, 'label-info': percent>=30 && percent<70, 'label-success': percent>=70}" [ngStyle]="{display: (overStar && !isReadonly) ? 'inline' : 'none'}">{{percent}}%</span>
+          <div class="card">
+            <pre class=" card-block card-header">Rate: <b>{{rate}}</b>;  Readonly is: <i>{{isReadonly}}</i>;  Hovering over: <b>{{overStar || "none"}}</b></pre>
+          </div>
+          <button type="button" class="btn btn-sm btn-danger" (click)="rate = 0" [disabled]="isReadonly">Clear
+          </button>
+          <button type="button" class="btn btn-sm btn-primary" (click)="isReadonly = ! isReadonly">Toggle Readonly
+          </button>
+        </div>
+        <div class="col-xs-12 col-12 col-md-6">
+          <div>
+            <rating [max]="10" [(ngModel)]="x" [customTemplate]="t" style="color: #0275d8;font-size: 20px;"></rating>
+            <b>(<i>Rate:</i> {{x}})</b>
+            <ng-template #t let-index="index" let-value="value">{{index
+              < value ? '&#9745;' : '&#9744;'}}</ng-template>
+          </div>
+
+          <div>
+            <rating [max]="10" [(ngModel)]="y" [customTemplate]="tt"></rating>
+            <b>(<i>Rate:</i> {{y}})</b>
+            <ng-template #tt let-i="index" let-v="value">
+              <button class="btn btn-{{i < v ? 'warning' : 'default'}}">
+                        {{i < v ? '&#9733;' : '&#9734;'}}
+                      </button>
+            </ng-template>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

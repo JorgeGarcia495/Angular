@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {
   AccordionModule, AlertModule, ModalModule, ButtonsModule, CarouselModule, CollapseModule, BsDatepickerModule,
-  BsDropdownModule, PaginationModule, PopoverModule, TooltipModule, TimepickerModule, BsModalService, ProgressbarModule
+  BsDropdownModule, PaginationModule, PopoverModule, TooltipModule, TimepickerModule, BsModalService, ProgressbarModule, RatingModule
 } from 'ngx-bootstrap';
 import { DialogoComponent } from './dialogo/dialogo.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -27,6 +27,7 @@ import { routing } from './bootstrap-routing.module';
 import { CarouselComponent } from './carousel/carousel.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { ProgressbarComponent } from './progressbar/progressbar.component';
+import { RatingsComponent } from './ratings/ratings.component';
 
 @NgModule({
   imports: [
@@ -46,7 +47,8 @@ import { ProgressbarComponent } from './progressbar/progressbar.component';
     PopoverModule.forRoot(),
     ProgressbarModule.forRoot(),
     TimepickerModule.forRoot(),
-    TooltipModule.forRoot()
+    TooltipModule.forRoot(),
+    RatingModule.forRoot()
   ],
   entryComponents: [DialogoComponent],
   declarations: [DialogoComponent,
@@ -63,7 +65,8 @@ import { ProgressbarComponent } from './progressbar/progressbar.component';
     TimepickerComponent,
     TooltipComponent,
     PopoverComponent,
-    ProgressbarComponent],
+    ProgressbarComponent,
+    RatingsComponent],
   providers: [BsModalService]
 })
 export class BootstrapModule { }
